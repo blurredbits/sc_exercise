@@ -1,0 +1,25 @@
+<div id="company">
+  <h1>
+    <%= @company.name %>
+  </h1>
+
+  <table id="attributes">
+    <tr>
+      <th>Admin</th>
+      <td><%= @company.admin.email %></td>
+    </tr>
+    <tr>
+      <th>Created:</th>
+      <td><%= time_ago_in_words(@company.created_at) %> ago</td>
+    </tr>
+  </table>
+
+  <ul class="actions">
+    <li>
+      <%= link_to "Edit Company", edit_company_path(@company), class: "edit" %>
+    </li>
+    <li>
+      <%= link_to "Delete Company", company_path(@company), method: :delete, class: "delete" %>
+    </li>
+  </ul>
+</div>
