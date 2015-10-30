@@ -12,12 +12,17 @@
 
   <div class="form-group">
     <%= f.label :password, class: "col-sm-2 control-label" %>
-    <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %>
+   
     <div class="col-sm-6">
       <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
     </div>
+
+    <% if @validatable %>
+    <div class="col-sm-offset-2 col-sm-6">
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+    </div>
+    <% end %>
+    
   </div>
 
   <div class="form-group">
