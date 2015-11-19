@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "User can create a new company" do
-  let(:user) { FactoryGirl.create(:user) }
+  let(:user) { FactoryGirl.create(:user, :admin) }
 
   before do
     login_as(user)

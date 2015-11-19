@@ -18,8 +18,10 @@
     <li>
       <%= link_to "Edit Company", edit_company_path(@company), class: "edit" %>
     </li>
-    <li>
-      <%= link_to "Delete Company", company_path(@company), method: :delete, class: "delete" %>
-    </li>
+    <% admins_only do %>
+      <li>
+        <%= link_to "Delete Company", admin_company_path(@company), method: :delete, class: "delete" %>
+      </li>
+    <% end %>
   </ul>
 </div>

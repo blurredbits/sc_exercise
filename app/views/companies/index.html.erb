@@ -1,9 +1,11 @@
 <h1>Companies</h1>
-<ul class="actions">
-  <li>
-    <%= link_to "New Company", new_company_path, class: "new" %>
-  </li>
-</ul>
+<% admins_only do %>
+  <ul class="actions">
+    <li>
+        <%= link_to "New Company", new_admin_company_path, class: "new" %>
+    </li>
+  </ul>
+<% end %>
 
 <div id="companies">
   <% @companies.each do |company| %>
