@@ -1,4 +1,4 @@
-require "rails helper"
+require "rails_helper"
 
 RSpec.feature "Admins can create new users" do
 
@@ -15,7 +15,7 @@ RSpec.feature "Admins can create new users" do
   scenario "with valid credentials" do
     fill_in "Email", with: "newbie@sc_exercise.com"
     fill_in "Password", with: "password"
-    click_button "Create user"
+    click_button "Create User"
     expect(page).to have_content "User has been created."
   end 
 end
